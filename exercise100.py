@@ -22,16 +22,14 @@ days = {
     12 : 31
 }
 def NumofDays(month, year):
-    day = 0
     for x in days:
-        if (x == month and x != days[2]):
-            day += days[x]
-        elif ((x == month and month == days[2]) and year %4 != 0):
-            day += days[x]
-        elif ((x == month and month == days[2]) and year %4 == 0):
-            day = 29
-            return day
-    print(day)
+        if (month == x and month != 2 in days):
+            return days[month]
+        elif (month == x and month == 2 in days and year %4 != 0):
+            return days[month]
+        elif (month == x and month == 2 in days and year %4 == 0):
+            return 29
+    
 month = int(input("Please enter a month between 1-12: "))
 year = int(input("Please enter a year in a four digit format (i.e. 2020): "))
-NumofDays(month, year)
+print(NumofDays(month, year))
