@@ -10,25 +10,25 @@
 # Identify and display all of the perfect numbers between 1 and 10,000. 
 # Import your solution to Exercise 109 when completing this task.
 
-def PerfectNum(num):
-    divisor = num
-    values = []
-    while divisor > 0:
-        solution = num %divisor
-        if solution == 0:
+def PerfectNum(num): # Initiate function with num parameter
+    divisor = num       #Set a divisor equal to parameter
+    values = []         # Blank list to append values to
+    while divisor > 0:  #Initiate while loop
+        solution = num %divisor #divide the num by %divisor to see if its a proper divisor
+        if solution == 0:           #if return value has 0 remainder append to values
             values.append(divisor)
-        divisor -= 1
-    for x in values:
-        if x == num:
+        divisor -= 1        #decrement divisor
+    for x in values: #Loop through values
+        if x == num:    #Remove the actual num 
             values.remove(x)
-        elif sum(values) == num:
+        elif sum(values) == num: #determine whether it is a perfect number and return True or False
             return True
         else:
             return False
     
-perfectnumbers = []
+perfectnumbers = [] #blank list to store perfect numbers
 
-for x in range(1, 10001):
+for x in range(1, 10001):       #loop through 1-10000 and append to list if a perfect number
     if PerfectNum(x) == True:
         perfectnumbers.append(x)
 

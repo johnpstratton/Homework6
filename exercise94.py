@@ -10,14 +10,14 @@
 # Detailed information about this function is available online.
 import random 
 def randPassword():
-    num = 0 # declare integer variable to 
-    password = ""
-    randRange = random.randint(7, 10)
-    count = 0
-    while count < randRange:
-        num = random.randint(33, 126)
-        password += chr(num)
-        count += 1
-    return password
+    num = 0 # declare variable to store random number between 33-136
+    password = "" #string to add characters to make password
+    randRange = random.randint(7, 10) # Used to ensure random length of password between 7-10 characters
+    count = 0 #incrementor for while loop
+    while count < randRange: # Initiate while loop 
+        num = random.randint(33, 126) # Initiate 1 new random number
+        password += chr(num) # append random character to password
+        count += 1 # increment
+    return password # return the password when while loop completes
 
 print(randPassword())
